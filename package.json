@@ -1,0 +1,23 @@
+{
+  "name": "thenetninja_passport",
+  "version": "1.0.0",
+  "description": "passport.js tutorial",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryantVail/TheNetNinja_passport.js.git"
+  },
+  "author": "Bryant V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BryantVail/TheNetNinja_passport.js/issues"
+  },
+  "homepage": "https://github.com/BryantVail/TheNetNinja_passport.js#readme",
+  "devDependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  }
+}
