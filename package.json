@@ -2,9 +2,9 @@
   "name": "thenetninja_passport",
   "version": "1.0.0",
   "description": "passport.js tutorial",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "server":"nodemon server.js",
+    "server":"nodemon app.js",
     "start" :"node server"
   },
   "repository": {
