@@ -19,6 +19,7 @@
   "homepage": "https://github.com/BryantVail/TheNetNinja_passport.js#readme",
   "devDependencies": {
     "ejs": "^2.6.1",
+    "eslint": "^4.19.1",
     "express": "^4.16.3"
   },
   "dependencies": {

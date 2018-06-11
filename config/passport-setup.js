@@ -14,8 +14,16 @@ passport.use(
         clientID    :   keys.google.clientID,
         clientSecret:   keys.google.clientSecret
         
-    }, ()=> {
-        //passport callback function
+    }, (accessToken, refreshToken, profile, done)=> {
+        /*from google verified access*/
+        /*refresh access token*/
+        /*payload, in this case, the "profile" */
+        //function "done"
 
+        //passport callback function
+        console.log(profile);
+        console.log(
+            "passport.use(\"new googleStrategy\" callback method console"
+        );
     })
-);
+);//end passport.use(
