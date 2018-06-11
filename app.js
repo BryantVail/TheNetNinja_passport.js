@@ -1,9 +1,12 @@
 //app.js
+const express       =   require("express");
+const app           =   express();   
 
-const express   =   require("express");
-const app       =   express();   
+const authRoutes    =   require("./routes/auth-routes");
 
-const authRoutes=   require("./routes/auth-routes");
+//executing passport.use for strategies
+const passportSetup =   require("./config/passport-setup");
+
 
 //set up view engine
 app.set("view engine", "ejs");

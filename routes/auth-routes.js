@@ -1,6 +1,7 @@
 //auth-routes.js
 
-const router = require("express").Router();
+const router    = require("express").Router();
+const passport  = require("passport");
 
 //auth login
 router.get("/login", (req,res)=>{
@@ -16,11 +17,15 @@ router.get("/logout", (req,res)=>{
 });
 
 //auth with Google
-router.get("/google", (req,res)=>{
-    //handle w/passport to give user sign-on interface
-    res.send("logging in w/google");
+router.get("/google", passport.authenticate("google", {
+    scope:["profile"]//other properties/information keys are available through api docs
+}));
 
+//callback route for google redirect
+router.get("/google/redirect", (req,res)=>{
+    res.send("You have reached the callback URI");
 });
+
 
 module.exports = router;
 
