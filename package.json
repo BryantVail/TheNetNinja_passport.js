@@ -23,6 +23,7 @@
     "express": "^4.16.3"
   },
   "dependencies": {
+    "mongoose": "^5.1.5",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
   }
