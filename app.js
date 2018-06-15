@@ -8,7 +8,7 @@ const authRoutes    =   require("./routes/auth-routes");
 const passportSetup =   require("./config/passport-setup");
 //mongoose
 const mongoose      =   require("mongoose");
-const keys         =   require("./config/keys");
+const keys         =    require("./config/keys");
 
 //set up view engine
 app.set("view engine", "ejs");
