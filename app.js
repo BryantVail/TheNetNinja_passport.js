@@ -1,7 +1,7 @@
 //app.js
 const express       =   require("express");
 const app           =   express();   
-
+//auth routes
 const authRoutes    =   require("./routes/auth-routes");
 
 //executing passport.use for strategies
