@@ -29,7 +29,7 @@ app.get("/", (req,res)=>{
 
 //SERVER
 //start server command//
-const port = /*findPort()*/3000;
+const port = /*findPort()*/2000;
 app.listen(port, ()=>{
     console.log(
         `app now listening for requests on port ${port}.`
