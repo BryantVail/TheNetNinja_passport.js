@@ -18,9 +18,8 @@ mongoose.connect(keys.mlab.dbURI, ()=>{
     console.log("Mongo Connected");
 });
 
-
-
-//set up routes
+//ROUTES
+//Authorization Routes
 app.use("/auth",authRoutes);//domain/auth/authRoutes
 
 //home route
@@ -28,8 +27,8 @@ app.get("/", (req,res)=>{
     res.render("home");
 });
 
-//start server command
-
+//SERVER
+//start server command//
 const port = /*findPort()*/3000;
 app.listen(port, ()=>{
     console.log(
