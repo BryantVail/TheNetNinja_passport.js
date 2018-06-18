@@ -20,8 +20,23 @@ passport.use(
         /*refresh access token*/
         /*payload, in this case, the "profile" */
         //function "done"
-        
-
+        User.findOne({googleId:profile.id})
+            .then((currentUser)=>{
+                if(currentUser){
+                    console.log(
+                        `User is: ${currentUser}`
+                    );
+                }else{
+                    new User({
+                        username    : profile.displayName,
+                        googleId    : profile.id
+                    }).save().then((newUser)=>{
+                        console.log(
+                            `New User Created: ${newUser}`
+                        );
+                    });
+                }
+            });
         //passport callback function
         console.log(profile);//we will take for now, Id, & displayName
         console.log(
