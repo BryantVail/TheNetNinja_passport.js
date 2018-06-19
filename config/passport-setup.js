@@ -23,6 +23,7 @@ passport.use(
         User.findOne({googleId:profile.id})
             .then((currentUser)=>{
                 if(currentUser){
+                    //user exists
                     console.log(
                         `User is: ${currentUser}`
                     );
@@ -38,19 +39,10 @@ passport.use(
                 }
             });
         //passport callback function
-        console.log(profile);//we will take for now, Id, & displayName
-        console.log(
-            "passport.use(\"new googleStrategy\" callback method console"
-        );
-
-        new User({
-            username    : profile.displayName, 
-            googleId    : profile.id
-        }).save().then((newUser)=>{
-            console.log(
-                `new user created: ${newUser}`
-            );
-        });
+        //console.log(profile);//we will take for now, Id, & displayName
+        // console.log(
+        //     "passport.use(\"new googleStrategy\" callback method console"
+        // );
     })
 );//end passport.use(
 
