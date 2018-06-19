@@ -5,6 +5,16 @@ const GoogleStrategy= require("passport-google-oauth20");
 const keys          = require("./keys");
 const User          = require("../models/userModel");
 
+passport.serializeUser((user, done)=>{
+    done(null/*error*/,user.id);
+});
+
+passport.deserializeUser((id, done)=>{
+    User.findById(id).then((user)=>{
+        done(null, user);
+    })
+    
+});
 
 passport.use(
     new GoogleStrategy({//using the google api to sign in. 
@@ -24,6 +34,8 @@ passport.use(
             .then((currentUser)=>{
                 if(currentUser){
                     //user exists
+                    done(null/*forError*/, currentUser);
+
                     console.log(
                         `User is: ${currentUser}`
                     );
@@ -32,6 +44,7 @@ passport.use(
                         username    : profile.displayName,
                         googleId    : profile.id
                     }).save().then((newUser)=>{
+                        done(null/*error*/, newUser);
                         console.log(
                             `New User Created: ${newUser}`
                         );
