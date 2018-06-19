@@ -36,9 +36,7 @@ passport.use(
                     //user exists
                     done(null/*forError*/, currentUser);
 
-                    console.log(
-                        `User is: ${currentUser}`
-                    );
+                    console.log(`User is: ${currentUser}`);
                 }else{
                     new User({
                         username    : profile.displayName,

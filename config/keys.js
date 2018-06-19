@@ -7,6 +7,9 @@ module.exports = {
     mlab:{
         dbURI:"mongodb://bxvail:contrasena1@ds018248.mlab.com:18248/netninja_passport-tut"
 
+    },
+    session:{
+        cookieKey:"vailsummitreachthetop"
     }
     
 };

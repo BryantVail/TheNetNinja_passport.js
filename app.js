@@ -6,12 +6,25 @@ const authRoutes    =   require("./routes/auth-routes");
 
 //executing passport.use for strategies
 const passportSetup =   require("./config/passport-setup");
+const passport      =   require("passport");
 //mongoose
 const mongoose      =   require("mongoose");
 const keys         =    require("./config/keys");
 
+const cookieSession =   require("cookie-session");
+
+
 //set up view engine
 app.set("view engine", "ejs");
+
+app.use(cookieSession({
+    maxAge  : 24*60*60*1000, //day
+    keys    : [keys.session.cookieKey]
+}));
+
+//initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 //connect to mongoDB
 mongoose.connect(keys.mlab.dbURI, ()=>{

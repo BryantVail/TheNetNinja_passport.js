@@ -23,7 +23,8 @@ router.get("/google", passport.authenticate("google", {
 
 //callback route for google redirect
 router.get("/google/redirect", passport.authenticate("google"), (req,res)=>{
-    res.send("you have reached the callback URI");
+    //req.user represents the user info now that the cookie has been set
+    res.send(req.user);
 
 });
 
