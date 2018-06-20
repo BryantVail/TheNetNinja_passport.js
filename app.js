@@ -3,7 +3,7 @@ const express       =   require("express");
 const app           =   express();   
 //auth routes
 const authRoutes    =   require("./routes/auth-routes");
-
+const profileRoutes =   require("./routes/profile-routes");
 //executing passport.use for strategies
 const passportSetup =   require("./config/passport-setup");
 const passport      =   require("passport");
@@ -34,6 +34,9 @@ mongoose.connect(keys.mlab.dbURI, ()=>{
 //ROUTES
 //Authorization Routes
 app.use("/auth",authRoutes);//domain/auth/authRoutes
+
+//Profile Routes
+app.use("/profile", profileRoutes);
 
 //home route
 app.get("/", (req,res)=>{
