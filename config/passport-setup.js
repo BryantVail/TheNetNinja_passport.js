@@ -30,6 +30,7 @@ passport.use(
         /*refresh access token*/
         /*payload, in this case, the "profile" */
         //function "done"
+        console.log(profile);
         User.findOne({googleId:profile.id})
             .then((currentUser)=>{
                 if(currentUser){
@@ -40,7 +41,8 @@ passport.use(
                 }else{
                     new User({
                         username    : profile.displayName,
-                        googleId    : profile.id
+                        googleId    : profile.id,
+                        thumbnail   : profile._json.image.url
                     }).save().then((newUser)=>{
                         done(null/*error*/, newUser);
                         console.log(
