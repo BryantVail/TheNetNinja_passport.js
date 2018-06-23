@@ -6,13 +6,15 @@ const passport  = require("passport");
 //auth login
 router.get("/login", (req,res)=>{
     //render login
-    res.render("login");
+    res.render("login", {user:req.user});
 });
 
 //auth logout
 router.get("/logout", (req,res)=>{
     //handle w/ passport
-    res.send("loggin out");
+    // res.send("loggin out");
+    req.logout();
+    res.redirect("/");
 
 });
 
