@@ -4,10 +4,15 @@ const router    = require("express").Router();
 const passport  = require("passport");
 
 //auth login
-router.get("/login", (req,res)=>{
+router.get("/login", function (req,res) {
     //render login
     res.render("login", {user:req.user});
 });
+//auth login
+// router.get("/login", (req,res)=>{
+//     //render login
+//     res.render("login", {user:req.user});
+// });
 
 //auth logout
 router.get("/logout", (req,res)=>{
